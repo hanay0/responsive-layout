@@ -1,0 +1,24 @@
+:root {
+    --primary-color-300: #73B2D9;
+    --primary-color-400: #24732F;
+    --primary-color-600: #1D592C;
+    --primary-color-900: #BF826B;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+
