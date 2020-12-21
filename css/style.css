@@ -1,8 +1,16 @@
 :root {
-    --primary-color-300: #73B2D9;
-    --primary-color-400: #24732F;
-    --primary-color-600: #1D592C;
-    --primary-color-900: #BF826B;
+    /* colors */
+    --primary-blue: #7AB5DD;
+    --light-brown: #C6B59C;
+    --medium-brown: #74483C;
+    /* --dark-brown: #423739; */
+    --dark-brown: #33292A;
+    --light-green: #3E704E;
+    --primary-white: #FFFFFF;
+
+    /* font families */
+    --main-font: 'Roboto', sans-serif;
+    --secondary-font: 'Playfair Display', serif;
 }
 
 *,
@@ -13,6 +21,12 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family:var(--main-font);
+    font-weight: 400;
+    font-size: 1.3125rem;
+    line-height: 1.6;
+}
 body,
 h1,
 h2,
@@ -21,4 +35,63 @@ p {
     margin: 0;
 }
 
+/* utility classes */
+h1,
+h2,
+h3 {
+    color: var(--light-brown);
+    line-height: 1;
+    font-family: var(--secondary-font);
+    font-weight: 900;
+}
+
+h2,
+h3,
+p {
+    margin-bottom: 1em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+
+header,
+section {
+    padding: 3rem 0;
+}
+
+.text-center {
+    text-align: center;
+}
+.container {
+    /* we can override margin auto with margin-inline */
+    /* margin: 0 auto; */
+    margin-inline: auto;
+    width: min(90%, 70.5rem);
+}
+
+.container--narrow {
+    max-width: 33rem;
+}
+
+/* backgronds-classes */
+.bg-light { 
+    background-color: var(--light-green);
+}
+.bg-dark { 
+    background-color: var(--dark-brown);
+    color: var(--primary-white);
+}
+.bg-accent {
+    background-color: var(--medium-brown);
+    color: var(--primary-white);
+}
+
+.bg-dark h2,
+.bg-accent h2 {
+    color: var(--light-brown);
+}
 
