@@ -22,11 +22,12 @@
 }
 
 body {
-    font-family:var(--main-font);
+    font-family: var(--main-font);
     font-weight: 400;
     font-size: 1.3125rem;
     line-height: 1.6;
 }
+
 body,
 h1,
 h2,
@@ -56,16 +57,23 @@ img {
     max-width: 100%;
 }
 
-
-
 header,
 section {
-    padding: 3rem 0;
+    padding: 4rem 0;
+}
+
+@media (min-width:40em) {
+
+    header,
+    section {
+        padding: 7rem 0;
+    }
 }
 
 .text-center {
     text-align: center;
 }
+
 .container {
     /* we can override margin auto with margin-inline */
     /* margin: 0 auto; */
@@ -73,18 +81,43 @@ section {
     width: min(90%, 70.5rem);
 }
 
+.split {
+    display: flex;
+    flex-direction: column;
+}
+
+/* media query for big screen */
+@media (min-width:40em) {
+    .split {
+        flex-direction: row;
+    }
+
+    /* make the columns have equal width */
+    .split>* {
+        flex-basis: 100%;
+    }
+
+    /* selecting any element that has a sibling before -- this instead of using gap */
+    .split>*+* {
+        margin-left: 2em;
+    }
+}
+
+
 .container--narrow {
     max-width: 33rem;
 }
 
 /* backgronds-classes */
-.bg-light { 
+.bg-light {
     background-color: var(--light-green);
 }
-.bg-dark { 
+
+.bg-dark {
     background-color: var(--dark-brown);
     color: var(--primary-white);
 }
+
 .bg-accent {
     background-color: var(--medium-brown);
     color: var(--primary-white);
@@ -95,3 +128,21 @@ section {
     color: var(--light-brown);
 }
 
+
+/* overlapping images using grid */
+.image-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.image-wrapper img:nth-child(1) {
+    grid-row: 1 / span 3 ;
+    grid-column: 1 / span 2;
+    z-index: 2;
+}
+
+.image-wrapper img:nth-child(2) {
+    grid-row: 3 / span 2 ;
+    grid-column: 2 / span 2;
+    z-index: 1;
+}
